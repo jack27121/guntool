@@ -1,0 +1,21 @@
+<sbspresets count="1" formatversion="1.1">
+ <sbspreset label="station_wall_01" pkgurl="pkg://Bitmap2Material_3">
+  <presetinput uid="2216812470" identifier="relief_balance" type="2" value="-0.357,0.598,0.469"/>
+  <presetinput uid="2248540187" identifier="roughness_value" type="0" value="0.726"/>
+  <presetinput uid="2248590180" identifier="metal_from_diffuse_keying_color" type="2" value="0.734,0.741,0.8"/>
+  <presetinput uid="2248590200" identifier="metal_from_diffuse_keying_settings" type="1" value="0.009,0.79"/>
+  <presetinput uid="2248591034" identifier="metal_roughness_influence" type="0" value="-0.418"/>
+  <presetinput uid="2256786770" identifier="roughness_variations_from_curves" type="0" value="0.973"/>
+  <presetinput uid="2259183193" identifier="metal_minimum_value" type="0" value="0.007"/>
+  <presetinput uid="2259198632" identifier="tiling_random_angle_variation" type="0" value="0.239"/>
+  <presetinput uid="2259198639" identifier="tiling_transition_precision" type="0" value="0.324"/>
+  <presetinput uid="2259413882" identifier="roughness_variations_softness" type="0" value="0.455"/>
+  <presetinput uid="2260298739" identifier="main_input" type="5" filepath="station_wall_01.png"/>
+  <presetinput uid="2262389286" identifier="relief_pinch" type="0" value="0.3"/>
+  <presetinput uid="2262389299" identifier="relief_pinch_radius" type="0" value="0.422"/>
+  <presetinput uid="2270841969" identifier="normal_intensity" type="0" value="13.188"/>
+  <presetinput uid="2310254644" identifier="tiling_transition_size" type="0" value="0.694"/>
+  <presetinput uid="4224312677" identifier="$outputsize" type="8" value="7,7"/>
+  <export timestart="0" dir="D:/projects/Game dev/retrospace/source files" metaopt="2" format="png" pattern="station_floor_02_%O" quality="100" fps="0" timeunit="frame" timeend="0" disabled="2216720331,2248589403,2256784148,2256784235,2256784331,2260541767,2260542786,2260542834,2260543212,2270841610,2309595826,2309595828"/>
+ </sbspreset>
+</sbspresets>

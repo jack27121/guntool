@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgsb8ldxtgls5"
+path="res://.godot/imported/oddworld__sfx-trio-dtmf-01.wav-73650f68ff3b4f988c6a1376756a5669.sample"
+
+[deps]
+
+source_file="res://source files/sounds/oddworld__sfx-trio-dtmf-01.wav"
+dest_files=["res://.godot/imported/oddworld__sfx-trio-dtmf-01.wav-73650f68ff3b4f988c6a1376756a5669.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

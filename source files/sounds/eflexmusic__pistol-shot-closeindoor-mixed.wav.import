@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://delr3glc7ydcq"
+path="res://.godot/imported/eflexmusic__pistol-shot-closeindoor-mixed.wav-1f537d7c2bf7286afbde02f062d506ec.sample"
+
+[deps]
+
+source_file="res://source files/sounds/eflexmusic__pistol-shot-closeindoor-mixed.wav"
+dest_files=["res://.godot/imported/eflexmusic__pistol-shot-closeindoor-mixed.wav-1f537d7c2bf7286afbde02f062d506ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmig2f78pim1s"]
+
+[ext_resource type="Script" path="res://assets/box/box.gd" id="1_eonjs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2y0q8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_woc5r"]
+resource_local_to_scene = true
+albedo_color = Color(0.884891, 0.711707, 0.492679, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vd1ho"]
+
+[node name="Box" type="Node3D"]
+script = ExtResource("1_eonjs")
+color = Color(0.884891, 0.711707, 0.492679, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_2y0q8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_woc5r")
+mesh = SubResource("BoxMesh_vd1ho")

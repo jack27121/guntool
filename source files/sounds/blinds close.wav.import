@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://de2majk2ehb8k"
+path="res://.godot/imported/blinds close.wav-a2ffd98e251d09a0fb8d0019900f82c4.sample"
+
+[deps]
+
+source_file="res://source files/sounds/blinds close.wav"
+dest_files=["res://.godot/imported/blinds close.wav-a2ffd98e251d09a0fb8d0019900f82c4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
