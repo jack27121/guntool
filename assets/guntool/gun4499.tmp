@@ -20,7 +20,6 @@ albedo_texture = SubResource("ViewportTexture_n3qvs")
 [node name="GunTool" node_paths=PackedStringArray("sub_viewport_container") instance=ExtResource("1_iilbq")]
 script = ExtResource("2_3ydrn")
 sub_viewport_container = NodePath("SubViewportContainer")
-framerate = 24
 
 [node name="Skeleton3D" parent="gun_tool_skeleton" index="0"]
 bones/0/position = Vector3(-5.96047e-09, -0.0908247, 0.0232217)
@@ -45,7 +44,7 @@ render_target_clear_mode = 2
 render_target_update_mode = 4
 
 [node name="BoneAttachment3DHandle" type="BoneAttachment3D" parent="CameraViewport" index="0"]
-transform = Transform3D(1, 2.58494e-25, -6.92009e-18, 1.71416e-18, 0.968835, 0.247708, 6.70442e-18, -0.247708, 0.968835, -5.96047e-09, -0.0908247, 0.0232217)
+transform = Transform3D(1, -3.25702e-24, -6.92009e-18, 1.71416e-18, 0.968835, 0.247707, 6.70442e-18, -0.247707, 0.968835, -5.96047e-09, -0.0908247, 0.0232217)
 bone_name = "handle"
 bone_idx = 0
 use_external_skeleton = true
@@ -94,6 +93,7 @@ texture = SubResource("ImageTexture_i8eqk")
 expand_mode = 1
 
 [node name="Highlighting" type="Node2D" parent="SubViewportContainer/ScreenViewport/CanvasLayer/Control" index="1"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("3_0anxn")
 texture = ExtResource("4_ew35r")
 
