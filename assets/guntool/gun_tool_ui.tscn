@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://drllvs3oy6swh"]
-
-[node name="UI" type="SubViewport"]
-size = Vector2i(160, 115)
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0

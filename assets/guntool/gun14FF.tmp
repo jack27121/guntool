@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://oicq7rx4e3mj"]
+
+[ext_resource type="PackedScene" uid="uid://dklckq0yq3bql" path="res://assets/guntool/gun_tool.glb" id="1_iilbq"]
+[ext_resource type="Script" path="res://assets/guntool/gun_tool.gd" id="2_3ydrn"]
+[ext_resource type="Texture2D" uid="uid://ilmv2ex7rd8n" path="res://assets/guntool/guntool-overlay.png" id="2_tittj"]
+[ext_resource type="Texture2D" uid="uid://bmrrb0f48e273" path="res://assets/guntool/gun_tool_Discord_y4CxwuldGW.png" id="4_1mide"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uw0bv"]
+viewport_path = NodePath("SubViewportContainer/GunToolViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l45l"]
+resource_local_to_scene = true
+shading_mode = 0
+specular_mode = 2
+albedo_texture = SubResource("ViewportTexture_uw0bv")
+
+[node name="GunTool" node_paths=PackedStringArray("sub_viewport_container") instance=ExtResource("1_iilbq")]
+script = ExtResource("2_3ydrn")
+sub_viewport_container = NodePath("SubViewportContainer")
+
+[node name="Skeleton3D" parent="gun_tool_skeleton" index="0"]
+bones/0/position = Vector3(-5.96047e-09, -0.0908247, 0.0232217)
+bones/0/rotation = Quaternion(-0.12483, -3.43298e-18, 4.31919e-19, 0.992178)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.0856476, 0.0873943, -0.701681, 0.701905)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-0.0649678, 0.148148, -0.0156104)
+bones/2/rotation = Quaternion(0.12483, 1.18277e-07, 1.48809e-08, 0.992178)
+bones/3/scale = Vector3(1, 1, 1.00001)
+
+[node name="gun_tool" parent="gun_tool_skeleton/Skeleton3D" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_3l45l")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "sway"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="2"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_bottom = -0.480011
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GunToolViewport" type="SubViewport" parent="SubViewportContainer" index="0"]
+handle_input_locally = false
+size = Vector2i(720, 480)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/GunToolViewport" index="0"]
+follow_viewport_enabled = true
+
+[node name="CameraFeed" type="TextureRect" parent="SubViewportContainer/GunToolViewport/CanvasLayer" index="0"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.375, 0.445)
+texture = ExtResource("4_1mide")
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/GunToolViewport/CanvasLayer" index="1"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.375, 0.445)
+texture = ExtResource("2_tittj")
+
+[node name="BoneAttachment3DHandle" type="BoneAttachment3D" parent="SubViewportContainer/GunToolViewport" index="1"]
+transform = Transform3D(1, 2.58494e-25, -6.92009e-18, 1.71416e-18, 0.968835, 0.247708, 6.70442e-18, -0.247708, 0.968835, -5.96047e-09, -0.0908247, 0.0232217)
+bone_name = "handle"
+bone_idx = 0
+use_external_skeleton = true
+external_skeleton = NodePath("../../../gun_tool_skeleton/Skeleton3D")
+
+[node name="GunToolCamera" type="Camera3D" parent="SubViewportContainer/GunToolViewport/BoneAttachment3DHandle" index="0"]
+transform = Transform3D(0.999766, 0.000327186, 0.000216405, -0.000266039, 0.970839, -0.238756, -0.000288279, 0.238756, 0.970839, 1.54885e-05, 0.396806, -0.312498)
+current = true
+fov = 39.0
+
+[node name="Framerate" type="Timer" parent="." index="3"]
+autostart = true
+
+[connection signal="timeout" from="Framerate" to="." method="_on_framerate_timeout"]
