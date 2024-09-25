@@ -1,6 +1,8 @@
 @tool
 extends Node3D
 
+@export var mesh : MeshInstance3D
+
 @export var color : Color = Color.GRAY:
 	set(value):
 		color = value
@@ -12,4 +14,4 @@ func _ready():
 	set_color(color)
 		
 func set_color(new_color : Color):
-	$StaticBody3D/MeshInstance3D.material_override.albedo_color = new_color
+	mesh.material_override.albedo_color = new_color

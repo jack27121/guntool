@@ -1,53 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://w4r0bhoxcg2a"]
+[gd_scene load_steps=2 format=3 uid="uid://w4r0bhoxcg2a"]
 
 [ext_resource type="PackedScene" uid="uid://bmig2f78pim1s" path="res://assets/box/box.tscn" id="1_oywtx"]
-[ext_resource type="PackedScene" uid="uid://be3kwdtbjww4y" path="res://assets/highlight_component.tscn" id="2_bkujr"]
 
 [node name="World" type="Node3D"]
 
 [node name="Box" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(-15.85, 0, 0, 0, 1, 0, 0, 0, -15.85, 0, -0.5, 0)
-color = Color(0.654983, 0.354674, 0.352114, 1)
 
 [node name="Box2" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, 7.4)
-color = Color(0.355551, 0.593648, 0.666143, 1)
 
 [node name="Box3" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, -7.6)
-color = Color(0.355551, 0.593648, 0.666143, 1)
 
 [node name="Box4" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, -7.5, 0.5, -0.1)
-color = Color(0.699275, 0.506881, 0.348767, 1)
 
 [node name="Box5" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, 7.5, 0.5, -0.0999996)
-color = Color(0.656944, 0.423573, 0.876376, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.945536, -0.231921, 0.228418, -0.325519, -0.673663, 0.663488, 0, -0.701706, -0.712467, -4.67235, 4.18788, -11.958)
-
-[node name="Box6" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(0.294, 0, 0, 0, 0.294, 0, 0, 0, 0.294, 5.0471, 0.96105, 4.09091)
-color = Color(1, 1, 1, 1)
-
-[node name="HighlightComponent" parent="Box6" instance=ExtResource("2_bkujr")]
-
-[node name="Box7" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(0.294, 0, 0, 0, 0.294, 0, 0, 0, 0.294, 2.91387, 1.361, 5.46901)
-color = Color(1, 1, 1, 1)
-
-[node name="HighlightComponent" parent="Box7" instance=ExtResource("2_bkujr")]
-
-[node name="Box8" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(0.294, 0, 0, 0, 0.294, 0, 0, 0, 0.294, -3.90072, 0.495908, 5.09031)
-color = Color(1, 1, 1, 1)
-
-[node name="HighlightComponent" parent="Box8" instance=ExtResource("2_bkujr")]
-
-[node name="Box9" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(0.294, 0, 0, 0, 0.294, 0, 0, 0, 0.294, -0.501242, 0.183493, 4.44193)
-color = Color(1, 1, 1, 1)
-
-[node name="HighlightComponent" parent="Box9" instance=ExtResource("2_bkujr")]

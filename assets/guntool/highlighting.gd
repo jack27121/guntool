@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 func _draw():
 	for pos in root.highlight_positions:
 		var s = 20
-		var rect = Rect2(pos.x-(s/2),pos.y-(s/2),s,s)
+		var rect = Rect2(pos.x-(s/2.0),pos.y-(s/2.0),s,s)
 		draw_rect(rect,Color.RED,false,2)
 		
 	
