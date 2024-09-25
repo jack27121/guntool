@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	if refresh_counter >= refresh_interval:
 		#update camera screen, to simulate low fps
 		await RenderingServer.frame_post_draw
-		# camera_feed.texture.set_image( camera_viewport.get_texture().get_image() )
+		camera_feed.texture.set_image( camera_viewport.get_texture().get_image() )
 		refresh_counter = 0	
 		
 	await get_tree().process_frame

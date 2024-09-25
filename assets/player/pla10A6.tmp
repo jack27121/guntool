@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqgi8qsa5qml8"]
+[gd_scene load_steps=3 format=3 uid="uid://cqgi8qsa5qml8"]
 
 [ext_resource type="Script" path="res://assets/player/player.gd" id="1_eu2sh"]
-[ext_resource type="PackedScene" uid="uid://oicq7rx4e3mj" path="res://assets/guntool/gun_tool.tscn" id="2_tdth5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_keiv8"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_eu2sh")
+speed = null
+mouse_sensitivity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_keiv8")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-
-[node name="GunTool" parent="Camera3D" instance=ExtResource("2_tdth5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296759, -0.21129, -0.367236)

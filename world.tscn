@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://w4r0bhoxcg2a"]
+[gd_scene load_steps=3 format=3 uid="uid://w4r0bhoxcg2a"]
 
 [ext_resource type="PackedScene" uid="uid://bmig2f78pim1s" path="res://assets/box/box.tscn" id="1_oywtx"]
+[ext_resource type="PackedScene" uid="uid://be3kwdtbjww4y" path="res://assets/highlight_component.tscn" id="2_aanpl"]
 
 [node name="World" type="Node3D"]
 
 [node name="Box" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(-15.85, 0, 0, 0, 1, 0, 0, 0, -15.85, 0, -0.5, 0)
+color = Color(0.73757, 0.745038, 0.765519, 1)
 
 [node name="Box2" parent="." instance=ExtResource("1_oywtx")]
 transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, 7.4)
@@ -17,7 +19,26 @@ transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, -7.6
 transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, -7.5, 0.5, -0.1)
 
 [node name="Box5" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, 7.5, 0.5, -0.0999996)
+transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, 7.4973, 0.500001, -0.0712086)
+color = Color(0.704932, 0.760679, 0.740672, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.945536, -0.231921, 0.228418, -0.325519, -0.673663, 0.663488, 0, -0.701706, -0.712467, -4.67235, 4.18788, -11.958)
+
+[node name="Box7" parent="." instance=ExtResource("1_oywtx")]
+transform = Transform3D(0.343587, 0, 0, 0, 0.42345, 0, 0, 0, 0.343587, 4.2798, 1.37115, -1.49843)
+
+[node name="HighlightComponent" parent="Box7" instance=ExtResource("2_aanpl")]
+transform = Transform3D(0.435539, 0, 0, 0, 0.357772, 0, 0, 0, 0.333153, 0, 0, 0)
+
+[node name="Box8" parent="." instance=ExtResource("1_oywtx")]
+transform = Transform3D(0.343587, 0, 0, 0, 0.42345, 0, 0, 0, 0.343587, 5.1442, 1.14109, 1.19859)
+
+[node name="HighlightComponent" parent="Box8" instance=ExtResource("2_aanpl")]
+transform = Transform3D(0.435539, 0, 0, 0, 0.357772, 0, 0, 0, 0.333153, 0, 0, 0)
+
+[node name="Box9" parent="." instance=ExtResource("1_oywtx")]
+transform = Transform3D(0.343587, 0, 0, 0, 0.42345, 0, 0, 0, 0.343587, 4.65549, 0.482049, 4.1558)
+
+[node name="HighlightComponent" parent="Box9" instance=ExtResource("2_aanpl")]
+transform = Transform3D(0.435539, 0, 0, 0, 0.357772, 0, 0, 0, 0.333153, 0, 0, 0)
