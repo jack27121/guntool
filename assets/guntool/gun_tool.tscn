@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://oicq7rx4e3mj"]
+[gd_scene load_steps=8 format=3 uid="uid://oicq7rx4e3mj"]
 
 [ext_resource type="PackedScene" uid="uid://dklckq0yq3bql" path="res://assets/guntool/gun_tool.glb" id="1_iilbq"]
 [ext_resource type="Script" path="res://assets/guntool/gun_tool.gd" id="2_3ydrn"]
 [ext_resource type="Texture2D" uid="uid://ilmv2ex7rd8n" path="res://assets/guntool/guntool-overlay.png" id="2_tittj"]
 [ext_resource type="Script" path="res://assets/guntool/highlighting.gd" id="3_0anxn"]
-[ext_resource type="Texture2D" uid="uid://crc6kji8tuqph" path="res://icon.svg" id="4_ew35r"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_n3qvs"]
 viewport_path = NodePath("SubViewportContainer/ScreenViewport")
@@ -92,9 +91,10 @@ grow_vertical = 2
 texture = SubResource("ImageTexture_i8eqk")
 expand_mode = 1
 
-[node name="Highlighting" type="Node2D" parent="SubViewportContainer/ScreenViewport/CanvasLayer/Control" index="1"]
+[node name="Highlighting" type="Node2D" parent="SubViewportContainer/ScreenViewport/CanvasLayer/Control" index="1" node_paths=PackedStringArray("camera")]
 script = ExtResource("3_0anxn")
-texture = ExtResource("4_ew35r")
+max_dist = 1000.0
+camera = NodePath("../../../../../CameraViewport/BoneAttachment3DHandle/GunToolCamera")
 
 [node name="ImageRect" type="TextureRect" parent="SubViewportContainer/ScreenViewport/CanvasLayer/Control" index="2"]
 layout_mode = 1

@@ -1,18 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmig2f78pim1s"]
+[gd_scene load_steps=6 format=3 uid="uid://bmig2f78pim1s"]
 
 [ext_resource type="Script" path="res://assets/box/box.gd" id="1_5eu1e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2y0q8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggmi8"]
-albedo_color = Color(0.73757, 0.745038, 0.765519, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em7rs"]
+albedo_color = Color(0.858683, 0.741333, 0.191967, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_r20ah"]
+[sub_resource type="BoxMesh" id="BoxMesh_lirv0"]
 resource_local_to_scene = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw813"]
+resource_local_to_scene = true
+albedo_color = Color(0.704932, 0.760679, 0.740672, 1)
 
 [node name="Box" type="Node3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_5eu1e")
 mesh = NodePath("StaticBody3D/MeshInstance3D")
+color = Color(0.858683, 0.741333, 0.191967, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -20,5 +25,6 @@ mesh = NodePath("StaticBody3D/MeshInstance3D")
 shape = SubResource("BoxShape3D_2y0q8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = SubResource("StandardMaterial3D_ggmi8")
-mesh = SubResource("BoxMesh_r20ah")
+material_override = SubResource("StandardMaterial3D_em7rs")
+mesh = SubResource("BoxMesh_lirv0")
+surface_material_override/0 = SubResource("StandardMaterial3D_fw813")
