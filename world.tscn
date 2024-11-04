@@ -1,32 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://w4r0bhoxcg2a"]
 
-[ext_resource type="PackedScene" uid="uid://bmig2f78pim1s" path="res://assets/box/box.tscn" id="1_oywtx"]
 [ext_resource type="PackedScene" uid="uid://be3kwdtbjww4y" path="res://assets/highlight_component.tscn" id="2_aanpl"]
+[ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="2_ithp6"]
 
 [node name="World" type="Node3D"]
-
-[node name="Box" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(-15.85, 0, 0, 0, 1, 0, 0, 0, -15.85, 0, -0.5, 0)
-color = Color(0.579841, 0.776401, 0.89135, 1)
-
-[node name="Box2" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, 7.4)
-
-[node name="Box3" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(15.7618, 0, 0, 0, 3, 0, 0, 0, 1, -7.45058e-09, 0.5, -7.6)
-color = Color(0.39964, 0.431539, 0.431137, 1)
-
-[node name="Box4" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, -7.5, 0.5, -0.1)
-color = Color(0.496366, 0.46008, 0.576328, 1)
-
-[node name="Box5" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(-6.88968e-07, 0, -1, 0, 3, 0, 15.7618, 0, -4.37114e-08, 7.4973, 0.500001, -0.0712086)
-color = Color(0.704932, 0.760679, 0.740672, 1)
-
-[node name="Box6" parent="." instance=ExtResource("1_oywtx")]
-transform = Transform3D(-3.03971e-07, 0, -1, 0, 3, 0, 6.95406, 0, -4.37114e-08, 1.22643, 0.500001, 3.7538)
-color = Color(0.704932, 0.760679, 0.740672, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.945536, -0.231921, 0.228418, -0.325519, -0.673663, 0.663488, 0, -0.701706, -0.712467, -4.67235, 4.18788, -11.958)
@@ -42,3 +19,19 @@ transform = Transform3D(0.149646, 0, 0, 0, 0.151499, 0, 0, 0, 0.114467, -2.0238,
 
 [node name="HighlightComponent4" parent="." instance=ExtResource("2_aanpl")]
 transform = Transform3D(0.149646, 0, 0, 0, 0.151499, 0, 0, 0, 0.114467, 2.72081, 1.14081, -2.17082)
+
+[node name="BasicBlock" parent="." instance=ExtResource("2_ithp6")]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -0.5, 0)
+block_style = 1
+
+[node name="BasicBlock2" parent="." instance=ExtResource("2_ithp6")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 16, -7.5, 1, 0)
+
+[node name="BasicBlock3" parent="." instance=ExtResource("2_ithp6")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 16, 7.5, 1, 0)
+
+[node name="BasicBlock4" parent="." instance=ExtResource("2_ithp6")]
+transform = Transform3D(-4.37114e-08, 0, -16, 0, 2, 0, 1, 0, -6.99382e-07, 3.27835e-07, 1, -7.5)
+
+[node name="BasicBlock5" parent="." instance=ExtResource("2_ithp6")]
+transform = Transform3D(-4.37114e-08, 0, -16, 0, 2, 0, 1, 0, -6.99382e-07, -3.27835e-07, 1, 7.5)

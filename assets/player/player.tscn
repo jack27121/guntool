@@ -16,4 +16,5 @@ shape = SubResource("CapsuleShape3D_keiv8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="GunTool" parent="Camera3D" instance=ExtResource("2_tdth5")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296759, -0.21129, -0.367236)

@@ -14,6 +14,8 @@ func _physics_process(_delta):
 	velocity.x = movement_dir.x * speed
 	velocity.z = movement_dir.z * speed
 	move_and_slide()
+	
+	%GunTool.move_speed(velocity.length() / speed)
 
 func _input(event):
 	#looking around
@@ -22,6 +24,18 @@ func _input(event):
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 	
+	if event.is_action_pressed("trigger"):
+		%GunTool.trigger()
+		
+	if event.is_action_pressed("button"):
+		%GunTool.button()
+		
+	if event.is_action_pressed("scroll_up"):
+		%GunTool.scroll(-1)
+		
+	if event.is_action_pressed("scroll_down"):
+		%GunTool.scroll(1)
+		
 	#quit game
 	if event.is_action_pressed("escape"):
 		get_tree().quit()

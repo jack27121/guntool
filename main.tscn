@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct4uqnbgvkjsc"]
+[gd_scene load_steps=6 format=3 uid="uid://ct4uqnbgvkjsc"]
 
 [ext_resource type="PackedScene" uid="uid://w4r0bhoxcg2a" path="res://world.tscn" id="1_2xcsf"]
 [ext_resource type="PackedScene" uid="uid://cqgi8qsa5qml8" path="res://assets/player/player.tscn" id="2_f3i72"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gewhj"]
+turbidity = 111.59
+sun_disk_scale = 7.86
+
+[sub_resource type="Sky" id="Sky_p5f14"]
+sky_material = SubResource("PhysicalSkyMaterial_gewhj")
+
+[sub_resource type="Environment" id="Environment_og2o5"]
+background_mode = 2
+sky = SubResource("Sky_p5f14")
+ambient_light_source = 2
+ambient_light_color = Color(0.259294, 0.259294, 0.259294, 1)
+tonemap_white = 2.09
+ssao_radius = 1.64
+ssao_intensity = 8.93
+glow_enabled = true
+glow_intensity = 2.49
+glow_strength = 1.3
+fog_light_energy = 1.3
+fog_sun_scatter = 0.5
+fog_density = 0.02
+fog_height = -126.81
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0469
+adjustment_contrast = 1.12
+adjustment_saturation = 1.75
 
 [node name="Main" type="Node3D"]
 
@@ -9,3 +36,6 @@
 
 [node name="Player" parent="." instance=ExtResource("2_f3i72")]
 transform = Transform3D(-0.116393, 0, -0.993203, 0, 1, 0, 0.993203, 0, -0.116393, -2.52795, 1, -3.1122)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_og2o5")

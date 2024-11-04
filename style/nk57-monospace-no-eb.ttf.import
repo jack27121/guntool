@@ -1,0 +1,40 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bcubq47xyw46s"
+path="res://.godot/imported/nk57-monospace-no-eb.ttf-1ad4ddff4848c5ec76a95ebd4e13ca0e.fontdata"
+
+[deps]
+
+source_file="res://style/nk57-monospace-no-eb.ttf"
+dest_files=["res://.godot/imported/nk57-monospace-no-eb.ttf-1ad4ddff4848c5ec76a95ebd4e13ca0e.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+disable_embedded_bitmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=2
+subpixel_positioning=1
+oversampling=4.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
+}]
+language_support={}
+script_support={}
+opentype_features={}

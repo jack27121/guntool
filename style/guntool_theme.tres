@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bmtyrqnum5klj"]
+
+[ext_resource type="Texture2D" uid="uid://c47b68m8sqw25" path="res://assets/guntool/gun tool gui/gui icon/widget.png" id="1_6ujft"]
+[ext_resource type="FontFile" uid="uid://bcubq47xyw46s" path="res://style/nk57-monospace-no-eb.ttf" id="1_j2erj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgek5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kk8g"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 0.453
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtuap"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.144063, 0.144063, 0.144063, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 0.453
+
+[resource]
+BoxContainer/constants/separation = 0
+HSlider/icons/grabber = ExtResource("1_6ujft")
+HSlider/icons/grabber_disabled = ExtResource("1_6ujft")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_j2erj")
+Label/styles/normal = SubResource("StyleBoxEmpty_tgek5")
+MarginContainer/constants/margin_bottom = 2
+MarginContainer/constants/margin_left = 2
+MarginContainer/constants/margin_right = 2
+MarginContainer/constants/margin_top = 2
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_8kk8g")
+PanelContainerGray/base_type = &"PanelContainer"
+PanelContainerGray/styles/panel = SubResource("StyleBoxFlat_qtuap")
