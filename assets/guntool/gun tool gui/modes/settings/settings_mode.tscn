@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://x5glhxy3lej3"]
+
+[ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_umqh5"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/settings_mode.gd" id="1_xokvu"]
+[ext_resource type="PackedScene" uid="uid://d2px0kkyq5vtn" path="res://assets/guntool/gun tool gui/modes/settings/gun_tool_gui_settings_option.tscn" id="3_2e8is"]
+[ext_resource type="Texture2D" uid="uid://csihoh14m1bgj" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet single.png" id="4_6qw8w"]
+[ext_resource type="Texture2D" uid="uid://bnt3jdgughr0h" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet burst.png" id="5_mvefg"]
+[ext_resource type="Texture2D" uid="uid://cotmn481vtk4q" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet rapid.png" id="6_0lugq"]
+
+[node name="SettingsMode" type="Control"]
+layout_mode = 3
+anchor_right = 0.583333
+anchor_bottom = 0.625
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_umqh5")
+script = ExtResource("1_xokvu")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 57.0
+offset_right = 420.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="OptionList" type="VBoxContainer" parent="Control/VBoxContainer/MarginContainer2/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GunToolGuiSettingsOption" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("3_2e8is")]
+layout_mode = 2
+setting_name = "option1"
+active = true
+button_images = Array[CompressedTexture2D]([ExtResource("4_6qw8w"), ExtResource("5_mvefg"), ExtResource("6_0lugq")])
+selected_max = 2
+
+[node name="GunToolGuiSettingsOption2" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("3_2e8is")]
+layout_mode = 2
+setting_name = "option2"
+option_type = 1
+button_images = Array[CompressedTexture2D]([null, null, null, null])
+selected = 1
+selected_max = 5

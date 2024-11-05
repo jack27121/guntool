@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyq3bxk434mys"]
 
 [ext_resource type="Texture2D" uid="uid://bfyaj8gs50vui" path="res://assets/guntool/gun tool gui/gui icon/guntool gui cog.png" id="2_wa6c7"]
-[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/option_box.gd" id="3_qojlo"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_box.gd" id="3_qojlo"]
 [ext_resource type="Shader" path="res://style/invert.gdshader" id="4_v0shu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_02eq6"]

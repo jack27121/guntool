@@ -7,7 +7,7 @@ extends GunToolGui
 signal shoot
 
 func button() -> void:
-	_leave()
+	exit()
 #func  trigger() -> void:
 	#pass
 	##shoot.emit()

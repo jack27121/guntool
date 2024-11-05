@@ -17,48 +17,6 @@ albedo_texture = SubResource("ViewportTexture_n3qvs")
 [sub_resource type="Animation" id="Animation_fxrrb"]
 resource_name = "bindpose"
 length = 0.0416667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("gun_tool_skeleton/Skeleton3D:handle")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -5.96047e-09, -0.0908247, 0.0232217)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("gun_tool_skeleton/Skeleton3D:handle")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.12483, -3.43298e-18, 4.31919e-19, 0.992178)
-tracks/2/type = "scale_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun_tool_skeleton/Skeleton3D:handle")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-tracks/3/type = "position_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("gun_tool_skeleton/Skeleton3D:screen")
-tracks/3/interp = 0
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.0649678, 0.148148, -0.0156104)
-tracks/4/type = "rotation_3d"
-tracks/4/imported = true
-tracks/4/enabled = true
-tracks/4/path = NodePath("gun_tool_skeleton/Skeleton3D:screen")
-tracks/4/interp = 0
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.12483, 1.18277e-07, 1.48809e-08, 0.992178)
-tracks/5/type = "scale_3d"
-tracks/5/imported = true
-tracks/5/enabled = true
-tracks/5/path = NodePath("gun_tool_skeleton/Skeleton3D:screen")
-tracks/5/interp = 0
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_68og2"]
 resource_name = "interact_01"
@@ -454,18 +412,18 @@ script = ExtResource("2_3ydrn")
 
 [node name="Skeleton3D" parent="gun_tool_skeleton" index="0"]
 unique_name_in_owner = true
-bones/0/position = Vector3(-8.74372e-06, -0.0907584, 0.0237153)
-bones/0/rotation = Quaternion(-0.11259, -0.000127022, 0.000112306, 0.993642)
+bones/0/position = Vector3(-5.96048e-09, -0.0920106, 0.023924)
+bones/0/rotation = Quaternion(-0.111951, -0.000123708, 0.000147906, 0.993714)
 bones/0/scale = Vector3(1.00046, 1.00046, 1.00046)
 bones/1/rotation = Quaternion(0.086, 0.087, -0.702, 0.702)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/position = Vector3(-0.0648252, 0.144215, -0.0190955)
-bones/2/rotation = Quaternion(0.104913, -0.0411867, 0.0039372, 0.99362)
-bones/2/scale = Vector3(0.965803, 0.965804, 0.965804)
+bones/2/position = Vector3(-0.0649677, 0.148149, -0.0156104)
+bones/2/rotation = Quaternion(0.124829, 1.18289e-07, 1.48611e-08, 0.992178)
+bones/2/scale = Vector3(0.967147, 0.967146, 0.967146)
 bones/3/scale = Vector3(1, 1, 1.00001)
 
 [node name="BoneAttachment3DBarrel" type="BoneAttachment3D" parent="gun_tool_skeleton/Skeleton3D" index="0"]
-transform = Transform3D(1.00046, -0.00019467, -0.000277845, 0.000251902, 0.975096, 0.223851, 0.000227243, -0.223851, 0.975095, -8.74372e-06, -0.0907584, 0.0237153)
+transform = Transform3D(1.00046, -0.000266377, -0.000279105, 0.000321798, 0.975383, 0.222596, 0.000212842, -0.222596, 0.975383, -5.96048e-09, -0.0920106, 0.023924)
 bone_name = "handle"
 bone_idx = 0
 
@@ -492,7 +450,7 @@ render_target_clear_mode = 2
 render_target_update_mode = 4
 
 [node name="BoneAttachment3DHandle" type="BoneAttachment3D" parent="CameraViewport" index="0"]
-transform = Transform3D(1.00046, -0.00019467, -0.000277845, 0.000251902, 0.975096, 0.223851, 0.000227243, -0.223851, 0.975095, -8.74372e-06, -0.0907584, 0.0237153)
+transform = Transform3D(1.00046, -0.000266377, -0.000279105, 0.000321798, 0.975383, 0.222596, 0.000212842, -0.222596, 0.975383, -5.96048e-09, -0.0920106, 0.023924)
 bone_name = "handle"
 bone_idx = 0
 use_external_skeleton = true
@@ -546,6 +504,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -40.0
+offset_right = 76.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="test label" type="Label" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "dsadasda"
+
+[node name="test label2" type="Label" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "dsadasda"
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="4"]
 unique_name_in_owner = true

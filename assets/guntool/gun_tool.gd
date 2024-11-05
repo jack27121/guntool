@@ -10,6 +10,16 @@ var raycast : RayCast3D
 
 var bullet_impact = preload("res://assets/bullet_impact.tscn")
 
+@export_category("settings")
+@export var option1 : int = 0:
+	set(val):
+		option1 = val
+		%"test label".text = str(option1)
+@export var option2 : int = 5:
+	set(val):
+		option2 = val
+		%"test label2".text = str(option2)
+@export var option3 : int = 5
 
 func _ready() -> void:
 	sub_viewport_container = $SubViewportContainer

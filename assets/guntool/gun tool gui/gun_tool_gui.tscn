@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyyctvro6awi3"]
+[gd_scene load_steps=15 format=3 uid="uid://cyyctvro6awi3"]
 
 [ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_6jsrl"]
 [ext_resource type="Script" path="res://assets/guntool/gun tool gui/gun_tool_gui.gd" id="2_pkwkq"]
@@ -8,13 +8,7 @@
 [ext_resource type="Script" path="res://assets/guntool/gun tool gui/camera_feed/camera_feed.gd" id="4_h61ra"]
 [ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/shooting_mode.gd" id="5_k8ald"]
 [ext_resource type="Shader" path="res://style/signal_noise.gdshader" id="5_t36xo"]
-[ext_resource type="PackedScene" uid="uid://d2px0kkyq5vtn" path="res://assets/guntool/gun tool gui/modes/settings/gun_tool_gui_settings_option.tscn" id="8_anjxl"]
-[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/settings_mode.gd" id="9_41xqb"]
-[ext_resource type="Texture2D" uid="uid://csihoh14m1bgj" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet single.png" id="9_f6jhf"]
-[ext_resource type="Texture2D" uid="uid://bnt3jdgughr0h" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet burst.png" id="10_cqvju"]
-[ext_resource type="Texture2D" uid="uid://cotmn481vtk4q" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet rapid.png" id="11_ixakl"]
-[ext_resource type="Texture2D" uid="uid://cs70swmxioa5s" path="res://assets/guntool/gun tool gui/gui icon/guntool gui on.png" id="12_x3f6w"]
-[ext_resource type="Texture2D" uid="uid://biaxhmhifmc40" path="res://assets/guntool/gun tool gui/gui icon/guntool gui off.png" id="13_l35ag"]
+[ext_resource type="PackedScene" uid="uid://x5glhxy3lej3" path="res://assets/guntool/gun tool gui/modes/settings/settings_mode.tscn" id="7_hfk6y"]
 [ext_resource type="Shader" path="res://assets/guntool/gun tool gui/gun_tool_gui.gdshader" id="15_1q7o4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdi3"]
@@ -35,7 +29,7 @@ shader_parameter/color_uniform = Vector3(1, 0.7, 0.4)
 [sub_resource type="ViewportTexture" id="ViewportTexture_3uwtk"]
 viewport_path = NodePath("GuiSubViewport")
 
-[node name="GunToolGui" type="Control" node_paths=PackedStringArray("active_child")]
+[node name="GunToolGui" type="Control"]
 custom_minimum_size = Vector2(420, 300)
 layout_mode = 3
 anchor_right = 0.583
@@ -43,7 +37,6 @@ anchor_bottom = 0.625
 offset_right = 0.23999
 theme = ExtResource("1_6jsrl")
 script = ExtResource("2_pkwkq")
-active_child = NodePath("GuiSubViewport/SideMenu")
 
 [node name="CameraFeed" parent="." instance=ExtResource("3_06vh7")]
 unique_name_in_owner = true
@@ -85,75 +78,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_k8ald")
 
-[node name="SettingsMode" type="Control" parent="GuiSubViewport/Modes"]
+[node name="SettingsMode" parent="GuiSubViewport/Modes" instance=ExtResource("7_hfk6y")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_41xqb")
-
-[node name="ColorRect" type="ColorRect" parent="GuiSubViewport/Modes/SettingsMode"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.145098, 0.145098, 0.145098, 1)
-
-[node name="Control" type="Control" parent="GuiSubViewport/Modes/SettingsMode"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 57.0
-offset_right = 420.0
-offset_bottom = 300.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GuiSubViewport/Modes/SettingsMode/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-text = "Settings"
-horizontal_alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2"]
-layout_mode = 2
-
-[node name="OptionList" type="VBoxContainer" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2/PanelContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="GunToolGuiSettingsOption" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("8_anjxl")]
-layout_mode = 2
-button_images = Array[CompressedTexture2D]([ExtResource("9_f6jhf"), ExtResource("10_cqvju"), ExtResource("11_ixakl")])
-selected = 1
-
-[node name="GunToolGuiSettingsOption2" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("8_anjxl")]
-layout_mode = 2
-button_images = Array[CompressedTexture2D]([ExtResource("12_x3f6w"), ExtResource("13_l35ag")])
-
-[node name="GunToolGuiSettingsOption3" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("8_anjxl")]
-layout_mode = 2
-
-[node name="GunToolGuiSettingsOption4" parent="GuiSubViewport/Modes/SettingsMode/Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("8_anjxl")]
-layout_mode = 2
 
 [node name="Backdrop" type="ColorRect" parent="GuiSubViewport"]
 unique_name_in_owner = true
@@ -192,7 +121,4 @@ visible = false
 script = ExtResource("3_t7xj0")
 max_dist = 1000.0
 
-[connection signal="leave" from="GuiSubViewport/Modes/ShootingMode" to="." method="_on_leave"]
 [connection signal="shoot" from="GuiSubViewport/Modes/ShootingMode" to="." method="_on_shooting_mode_shoot"]
-[connection signal="leave" from="GuiSubViewport/Modes/SettingsMode" to="." method="_on_leave"]
-[connection signal="select_menu" from="GuiSubViewport/SideMenu" to="." method="_on_side_menu_select"]

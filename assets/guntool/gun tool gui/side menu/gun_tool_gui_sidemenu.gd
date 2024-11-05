@@ -1,7 +1,5 @@
 extends GunToolGui
 
-signal select_menu(gui : GunToolGui)
-
 var menu_icons : Array
 @export var menus : Array[GunToolGui] = [] :
 	set(val):
@@ -9,6 +7,7 @@ var menu_icons : Array
 		selected_max = menus.size() -1
 
 func _ready() -> void:
+	super._ready()
 	menu_icons = get_tree().get_nodes_in_group("menu icon")
 	show_menus()
 
@@ -24,7 +23,17 @@ func show_menus() -> void:
 	menus[selected].visible = true
 
 func trigger() -> void:
-	select_menu.emit(menus[selected])
+	var menu : GunToolGui = menus[selected]
+	enter(menu)
+	match menu.name:
+		"ShootingMode":
+			self.visible = false
+
+func on_exited() -> void:
+	%Darken.visible = true
+	%Backdrop.visible = false
 	
-func darken(_darken : bool) -> void:
-	%Darken.visible = _darken
+func on_entered() -> void:
+	%Darken.visible = false
+	%Backdrop.visible = true
+	self.visible = true

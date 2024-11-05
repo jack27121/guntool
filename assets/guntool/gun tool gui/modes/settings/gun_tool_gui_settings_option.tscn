@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_1b2qi"]
 [ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/gun_tool_gui_settings_option.gd" id="2_ql5r4"]
-[ext_resource type="PackedScene" uid="uid://dyq3bxk434mys" path="res://assets/guntool/gun tool gui/modes/settings/option_box.tscn" id="3_hb5sj"]
 [ext_resource type="Shader" path="res://style/invert.gdshader" id="3_r1h4b"]
-[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/option_box.gd" id="4_fb3hs"]
-[ext_resource type="Texture2D" uid="uid://bfyaj8gs50vui" path="res://assets/guntool/gun tool gui/gui icon/guntool gui cog.png" id="5_hrt1a"]
+[ext_resource type="PackedScene" uid="uid://dyq3bxk434mys" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_box.tscn" id="3_ut2al"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_box.gd" id="4_cx5o2"]
+[ext_resource type="Texture2D" uid="uid://bfyaj8gs50vui" path="res://assets/guntool/gun tool gui/gui icon/guntool gui cog.png" id="5_yykea"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c4onp"]
 shader = ExtResource("3_r1h4b")
@@ -19,9 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1b2qi")
 script = ExtResource("2_ql5r4")
-button_images = Array[CompressedTexture2D]([null, null, null])
-slider_max = 4
-selected = 2
+button_images = Array[CompressedTexture2D]([null, null])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 use_parent_material = true
@@ -66,31 +64,22 @@ unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/HBoxContainer/Options" instance=ExtResource("3_hb5sj")]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/HBoxContainer/Options" instance=ExtResource("3_ut2al")]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.244777, 0.244776, 0.244776, 1)
-script = ExtResource("4_fb3hs")
-image = ExtResource("5_hrt1a")
+script = ExtResource("4_cx5o2")
+image = ExtResource("5_yykea")
 metadata/_edit_use_anchors_ = true
 
-[node name="@ColorRect@299976" type="ColorRect" parent="MarginContainer/ColorRect/HBoxContainer/Options" instance=ExtResource("3_hb5sj")]
+[node name="@ColorRect@470199" type="ColorRect" parent="MarginContainer/ColorRect/HBoxContainer/Options" instance=ExtResource("3_ut2al")]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.244777, 0.244776, 0.244776, 1)
-script = ExtResource("4_fb3hs")
-image = ExtResource("5_hrt1a")
-metadata/_edit_use_anchors_ = true
-
-[node name="@ColorRect@299977" type="ColorRect" parent="MarginContainer/ColorRect/HBoxContainer/Options" instance=ExtResource("3_hb5sj")]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.244777, 0.244776, 0.244776, 1)
-script = ExtResource("4_fb3hs")
-image = ExtResource("5_hrt1a")
+script = ExtResource("4_cx5o2")
+image = ExtResource("5_yykea")
 metadata/_edit_use_anchors_ = true
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
