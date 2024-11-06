@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyvh4eyq8x6f4"
+path="res://.godot/imported/superphys_launch4.wav-bc449c600d6909474132de91b6f610a2.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/superphys_launch4.wav"
+dest_files=["res://.godot/imported/superphys_launch4.wav-bc449c600d6909474132de91b6f610a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

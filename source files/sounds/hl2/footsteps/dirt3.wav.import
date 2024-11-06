@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8g0rm3s1tarh"
+path="res://.godot/imported/dirt3.wav-07954883c4da931bd7d7db16e28a1524.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/footsteps/dirt3.wav"
+dest_files=["res://.godot/imported/dirt3.wav-07954883c4da931bd7d7db16e28a1524.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,28 +1,27 @@
 @tool
 
-extends GunToolGui
+extends GunToolGuiBase
 
-var options : Array[Node]
-
-
+@onready var options := %OptionList.get_children()
+@onready var scroll := %Scroll
 
 func _ready() -> void:
-	super._ready()
-	selected_max = %OptionList.get_children().size() -1
-	options = %OptionList.get_children()
-	#for option in options:
-		#guntool.get()
+	selected_max = options.size() -1
 	set_active()
 	
-func button() -> void:
+func _button() -> void:
+	sound_play(snd_cancel)
 	exit()
 
-func trigger() -> void:	
+func _trigger() -> void:
 	var option = options[selected]
-	option.trigger()
+	option._trigger()
 
-func scroll(val : int) -> void:
-	super.scroll(val)
+func _scroll(val : int) -> void:
+	super._scroll(val)
+	sound_play(snd_option)
+	scroll.scroll_vertical = max(selected-2,0) * 50
+		
 	set_active()
 
 func set_active() -> void:

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q7hydps0biiv"
+path="res://.godot/imported/bugbait_impact1.wav-3e22f06a580514125d35fe911c89d070.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/bugbait_impact1.wav"
+dest_files=["res://.godot/imported/bugbait_impact1.wav-3e22f06a580514125d35fe911c89d070.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

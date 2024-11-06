@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgf2v4rxwenj2"
+path="res://.godot/imported/door1_move.wav-0c83ba21ad98dbbf4383cdb2528389de.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/door1_move.wav"
+dest_files=["res://.godot/imported/door1_move.wav-0c83ba21ad98dbbf4383cdb2528389de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

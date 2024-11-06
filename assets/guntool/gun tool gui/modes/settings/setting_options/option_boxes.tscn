@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://kmrj2uaieqo6"]
+
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_boxes.gd" id="1_d4tub"]
+[ext_resource type="PackedScene" uid="uid://djvn2akm30852" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/parts/option_bar.tscn" id="1_k304c"]
+[ext_resource type="PackedScene" uid="uid://dyq3bxk434mys" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/parts/option_box.tscn" id="3_cylgs"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/parts/option_box.gd" id="4_l3vq0"]
+[ext_resource type="Texture2D" uid="uid://bfyaj8gs50vui" path="res://assets/guntool/gun tool gui/gui icon/guntool gui cog.png" id="5_7ufys"]
+
+[node name="OptionBoxes" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchor_right = 0.586111
+anchor_bottom = 0.104167
+grow_horizontal = 2
+script = ExtResource("1_d4tub")
+button_images = Array[CompressedTexture2D]([null, null])
+display_text = "test"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionBar" parent="." instance=ExtResource("1_k304c")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Text" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer" index="0"]
+text = "test"
+
+[node name="MarginContainer2" parent="OptionBar/ColorRect/HBoxContainer" index="1"]
+size_flags_horizontal = 1
+
+[node name="ColorRect" type="ColorRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options" index="0" instance=ExtResource("3_cylgs")]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+color = Color(0.244777, 0.244776, 0.244776, 1)
+script = ExtResource("4_l3vq0")
+active = true
+image = ExtResource("5_7ufys")
+
+[node name="@ColorRect@75490" type="ColorRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options" index="1" instance=ExtResource("3_cylgs")]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+color = Color(0.244777, 0.244776, 0.244776, 1)
+script = ExtResource("4_l3vq0")
+image = ExtResource("5_7ufys")
+
+[editable path="OptionBar"]

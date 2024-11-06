@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pvsm84utspwv"
+path="res://.godot/imported/SND System Ng.mp3-95dd2d57ed6767faff00ff39760e0673.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/guntool/gui/SND System Ng.mp3"
+dest_files=["res://.godot/imported/SND System Ng.mp3-95dd2d57ed6767faff00ff39760e0673.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

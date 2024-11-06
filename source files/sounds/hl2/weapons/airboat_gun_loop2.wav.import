@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckrb3xldd07bh"
+path="res://.godot/imported/airboat_gun_loop2.wav-7533c292c3dff88c164dc5429e2b4ac2.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/airboat_gun_loop2.wav"
+dest_files=["res://.godot/imported/airboat_gun_loop2.wav-7533c292c3dff88c164dc5429e2b4ac2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

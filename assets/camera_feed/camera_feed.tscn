@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dle5mttdmyvfy"]
+
+[ext_resource type="Script" path="res://assets/camera_feed/camera_feed.gd" id="2_4135c"]
+[ext_resource type="Shader" path="res://style/signal_noise.gdshader" id="3_o3fpk"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_vd4c1"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1amm"]
+shader = ExtResource("3_o3fpk")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/noise_amount = 1.03
+shader_parameter/interference_amount = 39.903
+shader_parameter/signal_loss = 0.125
+
+[node name="CameraFeed" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_vd4c1")
+expand_mode = 1
+script = ExtResource("2_4135c")
+
+[node name="SignalNoise" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_q1amm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://j18o7rvo5frh"]
+
+[ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_dls76"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_list.gd" id="1_fv4bc"]
+[ext_resource type="PackedScene" uid="uid://djvn2akm30852" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/parts/option_bar.tscn" id="2_jts81"]
+[ext_resource type="Texture2D" uid="uid://bisr5jo31ydx4" path="res://assets/guntool/gun tool gui/gui icon/triangle.png" id="4_f8eo6"]
+[ext_resource type="Shader" path="res://style/invert.gdshader" id="5_3gjdl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ow0k0"]
+shader = ExtResource("5_3gjdl")
+
+[node name="OptionList" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchor_right = 0.55
+anchor_bottom = 0.104167
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dls76")
+script = ExtResource("1_fv4bc")
+text_list = Array[String](["one", "two", "three"])
+option_var = "none"
+selected_max = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionBar" parent="." instance=ExtResource("2_jts81")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="OptionSlider" type="ColorRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options" index="0"]
+texture_filter = 1
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme = ExtResource("1_dls76")
+color = Color(0.244777, 0.244776, 0.244776, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(15, 15)
+size_flags_horizontal = 3
+texture = ExtResource("4_f8eo6")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ListText" type="Label" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "one"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="TextureRect" type="TextureRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer/HBoxContainer/Control2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(15, 15)
+size_flags_horizontal = 3
+texture = ExtResource("4_f8eo6")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider"]
+position = Vector2(2, 9.5)
+copy_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Invert" type="ColorRect" parent="OptionBar/ColorRect/HBoxContainer/MarginContainer2/Options/OptionSlider/MarginContainer2"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_ow0k0")
+layout_mode = 2
+
+[editable path="OptionBar"]

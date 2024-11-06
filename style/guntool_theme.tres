@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bmtyrqnum5klj"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bmtyrqnum5klj"]
 
 [ext_resource type="Texture2D" uid="uid://c47b68m8sqw25" path="res://assets/guntool/gun tool gui/gui icon/widget.png" id="1_6ujft"]
 [ext_resource type="FontFile" uid="uid://bcubq47xyw46s" path="res://style/nk57-monospace-no-eb.ttf" id="1_j2erj"]
@@ -17,17 +17,12 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing_size = 0.453
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtuap"]
-content_margin_left = 5.0
-content_margin_top = 5.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spmyy"]
+bg_color = Color(0.243137, 0.243137, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gc6ox"]
 content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.144063, 0.144063, 0.144063, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing_size = 0.453
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [resource]
 BoxContainer/constants/separation = 0
@@ -49,5 +44,8 @@ MarginContainer/constants/margin_left = 2
 MarginContainer/constants/margin_right = 2
 MarginContainer/constants/margin_top = 2
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_8kk8g")
-PanelContainerGray/base_type = &"PanelContainer"
-PanelContainerGray/styles/panel = SubResource("StyleBoxFlat_qtuap")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_spmyy")
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_gc6ox")
+VScrollBar/styles/scroll_focus = null

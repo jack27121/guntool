@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3xu241m5jh3s"
+path="res://.godot/imported/slosh1.wav-e930d738a633e710fc915ad4290d1dd2.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/footsteps/slosh1.wav"
+dest_files=["res://.godot/imported/slosh1.wav-e930d738a633e710fc915ad4290d1dd2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

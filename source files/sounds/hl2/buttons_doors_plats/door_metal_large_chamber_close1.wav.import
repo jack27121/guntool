@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccf70663s1obd"
+path="res://.godot/imported/door_metal_large_chamber_close1.wav-af8933965c060de46d3763bd5f7d1c5f.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/door_metal_large_chamber_close1.wav"
+dest_files=["res://.godot/imported/door_metal_large_chamber_close1.wav-af8933965c060de46d3763bd5f7d1c5f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

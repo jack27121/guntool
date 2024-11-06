@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbuxtu5njs0jk"
+path="res://.godot/imported/duct3.wav-1f16bbe6e26660ba60fb05b9bf4d92fc.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/footsteps/duct3.wav"
+dest_files=["res://.godot/imported/duct3.wav-1f16bbe6e26660ba60fb05b9bf4d92fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

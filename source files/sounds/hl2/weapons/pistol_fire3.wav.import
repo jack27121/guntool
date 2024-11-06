@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx1kk67pvrqd2"
+path="res://.godot/imported/pistol_fire3.wav-bb619431eb7f09012d386f942705a917.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/pistol_fire3.wav"
+dest_files=["res://.godot/imported/pistol_fire3.wav-bb619431eb7f09012d386f942705a917.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

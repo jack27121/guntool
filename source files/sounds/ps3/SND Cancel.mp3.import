@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ber8357jq445j"
+path="res://.godot/imported/SND Cancel.mp3-30d64b108ae8071b58d276b70b2d6e83.mp3str"
+
+[deps]
+
+source_file="res://source files/sounds/ps3/SND Cancel.mp3"
+dest_files=["res://.godot/imported/SND Cancel.mp3-30d64b108ae8071b58d276b70b2d6e83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

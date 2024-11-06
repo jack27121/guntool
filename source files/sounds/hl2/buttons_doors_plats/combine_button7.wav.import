@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fbypu1evfbl1"
+path="res://.godot/imported/combine_button7.wav-11f4e981b9ebb401f584d2e152cf681d.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/combine_button7.wav"
+dest_files=["res://.godot/imported/combine_button7.wav-11f4e981b9ebb401f584d2e152cf681d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://x5glhxy3lej3"]
+[gd_scene load_steps=11 format=3 uid="uid://x5glhxy3lej3"]
 
 [ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_umqh5"]
 [ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/settings/settings_mode.gd" id="1_xokvu"]
-[ext_resource type="PackedScene" uid="uid://d2px0kkyq5vtn" path="res://assets/guntool/gun tool gui/modes/settings/gun_tool_gui_settings_option.tscn" id="3_2e8is"]
-[ext_resource type="Texture2D" uid="uid://csihoh14m1bgj" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet single.png" id="4_6qw8w"]
-[ext_resource type="Texture2D" uid="uid://bnt3jdgughr0h" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet burst.png" id="5_mvefg"]
-[ext_resource type="Texture2D" uid="uid://cotmn481vtk4q" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet rapid.png" id="6_0lugq"]
+[ext_resource type="PackedScene" uid="uid://kmrj2uaieqo6" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_boxes.tscn" id="3_rx8st"]
+[ext_resource type="Texture2D" uid="uid://biaxhmhifmc40" path="res://assets/guntool/gun tool gui/gui icon/guntool gui off.png" id="4_kvo58"]
+[ext_resource type="PackedScene" uid="uid://bbn654j1w2e3s" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_slider.tscn" id="4_u1b0e"]
+[ext_resource type="PackedScene" uid="uid://j18o7rvo5frh" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/option_list.tscn" id="5_nkipa"]
+[ext_resource type="Texture2D" uid="uid://cs70swmxioa5s" path="res://assets/guntool/gun tool gui/gui icon/guntool gui on.png" id="5_wuaj5"]
+[ext_resource type="Texture2D" uid="uid://csihoh14m1bgj" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet single.png" id="6_e7iuk"]
+[ext_resource type="Texture2D" uid="uid://bnt3jdgughr0h" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet burst.png" id="7_klww2"]
+[ext_resource type="Texture2D" uid="uid://cotmn481vtk4q" path="res://assets/guntool/gun tool gui/gui icon/guntool gui bullet rapid.png" id="8_vbt0h"]
 
 [node name="SettingsMode" type="Control"]
 layout_mode = 3
@@ -15,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_umqh5")
 script = ExtResource("1_xokvu")
+selected_max = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -49,7 +54,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
-text = "Settings"
+text = "CONFIGURATION"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
@@ -59,21 +64,60 @@ size_flags_vertical = 3
 [node name="PanelContainer" type="PanelContainer" parent="Control/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 
-[node name="OptionList" type="VBoxContainer" parent="Control/VBoxContainer/MarginContainer2/PanelContainer"]
+[node name="Scroll" type="ScrollContainer" parent="Control/VBoxContainer/MarginContainer2/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="GunToolGuiSettingsOption" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("3_2e8is")]
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll"]
 layout_mode = 2
-setting_name = "option1"
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = -3
+
+[node name="OptionList" type="VBoxContainer" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_umqh5")
+
+[node name="OptionSafety" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("3_rx8st")]
+layout_mode = 2
+button_images = Array[CompressedTexture2D]([ExtResource("4_kvo58"), ExtResource("5_wuaj5")])
 active = true
-button_images = Array[CompressedTexture2D]([ExtResource("4_6qw8w"), ExtResource("5_mvefg"), ExtResource("6_0lugq")])
+display_text = "safety"
+option_var = "safety"
+
+[node name="OptionBurst" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("3_rx8st")]
+layout_mode = 2
+button_images = Array[CompressedTexture2D]([ExtResource("6_e7iuk"), ExtResource("7_klww2"), ExtResource("8_vbt0h")])
+display_text = "burst_fire"
+option_var = "burst_fire"
 selected_max = 2
 
-[node name="GunToolGuiSettingsOption2" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/OptionList" instance=ExtResource("3_2e8is")]
+[node name="OptionBattery" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("3_rx8st")]
 layout_mode = 2
-setting_name = "option2"
-option_type = 1
-button_images = Array[CompressedTexture2D]([null, null, null, null])
-selected = 1
+button_images = Array[CompressedTexture2D]([ExtResource("4_kvo58"), ExtResource("5_wuaj5")])
+display_text = "btry_svn"
+option_var = "battery_saving"
+
+[node name="OptionColor" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("5_nkipa")]
+layout_mode = 2
+text_list = Array[String](["BLANK", "DEUS_EX", "CBER_PNK", "BISXUAL"])
+display_text = "gui_clr"
+option_var = "gui_color"
+selected_max = 3
+
+[node name="OptionBrightness" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("4_u1b0e")]
+layout_mode = 2
+display_text = "brightns"
+option_var = "brightness"
+selected_max = 10
+selected = 10
+
+[node name="OptionBrightness2" parent="Control/VBoxContainer/MarginContainer2/PanelContainer/Scroll/MarginContainer/OptionList" instance=ExtResource("4_u1b0e")]
+layout_mode = 2
+display_text = "extra"
 selected_max = 5

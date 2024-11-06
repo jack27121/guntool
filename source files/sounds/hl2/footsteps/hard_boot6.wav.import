@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ia3wxfqd1t0f"
+path="res://.godot/imported/hard_boot6.wav-faef64c7a1b5496f167746b9fd3a039c.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/footsteps/hard_boot6.wav"
+dest_files=["res://.godot/imported/hard_boot6.wav-faef64c7a1b5496f167746b9fd3a039c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,17 +1,16 @@
-extends GunToolGui
+extends GunToolGuiBase
 
 @export var zoom_max : float = 9
 @export var zoom_min : float = 39
 @export var zoom_step : float = 1.5
 
-signal shoot
-
-func button() -> void:
+func _button() -> void:
+	sound_play(snd_cancel)
 	exit()
-#func  trigger() -> void:
-	#pass
-	##shoot.emit()
-#
+
+func _trigger() -> void:
+	guntool.shoot()
+
 #func scroll(val : int) -> void:
 	#pass
 	##zoom camera

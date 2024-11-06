@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch68uc30jmnk3"]
+
+[ext_resource type="PackedScene" uid="uid://bc8k1e86dsxte" path="res://assets/cctv camera/model/cctv_camera.glb" id="1_cajhv"]
+[ext_resource type="Script" path="res://assets/cctv camera/cctv_camera.gd" id="2_sm18k"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_i70oi"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_745t7"]
+animation = &"yaw"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2frc3"]
+animation = &"pitch"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 0
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_h8r3w"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_1en5y"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_8qet0"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_ct7fk"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_o51cg"]
+nodes/Add2/node = SubResource("AnimationNodeAdd2_i70oi")
+nodes/Add2/position = Vector2(500, 50)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_2frc3")
+nodes/Animation/position = Vector2(-25, 25)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_745t7")
+"nodes/Animation 2/position" = Vector2(-25, 225)
+nodes/_TimeScale/node = SubResource("AnimationNodeTimeScale_1en5y")
+nodes/_TimeScale/position = Vector2(150, 0)
+"nodes/_TimeScale 2/node" = SubResource("AnimationNodeTimeScale_h8r3w")
+"nodes/_TimeScale 2/position" = Vector2(150, 200)
+nodes/output/position = Vector2(750, 0)
+nodes/pitch/node = SubResource("AnimationNodeTimeSeek_8qet0")
+nodes/pitch/position = Vector2(300, 0)
+nodes/yaw/node = SubResource("AnimationNodeTimeSeek_ct7fk")
+nodes/yaw/position = Vector2(300, 200)
+node_connections = [&"Add2", 0, &"pitch", &"Add2", 1, &"yaw", &"_TimeScale", 0, &"Animation", &"_TimeScale 2", 0, &"Animation 2", &"output", 0, &"Add2", &"pitch", 0, &"_TimeScale", &"yaw", 0, &"_TimeScale 2"]
+
+[node name="CctvCamera" instance=ExtResource("1_cajhv")]
+script = ExtResource("2_sm18k")
+
+[node name="Skeleton3D" parent="cctv rig" index="0"]
+bones/1/rotation = Quaternion(5.96046e-08, 2.23517e-08, -2.88658e-14, 1)
+bones/2/rotation = Quaternion(2.1141e-07, 4.28408e-08, -0.707107, 0.707107)
+bones/3/rotation = Quaternion(0.707107, 4.80143e-08, 2.65658e-07, 0.707107)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(0.0583938, 0.173954, 0.25823)
+bones/5/rotation = Quaternion(0.230613, 0.0823957, 0.325835, 0.913159)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(0.0317211, 0.0548578, 0.122426)
+bones/6/scale = Vector3(1, 1.00122, 1)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_o51cg")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/_TimeScale/scale = 0.0
+"parameters/_TimeScale 2/scale" = 0.0
+parameters/pitch/seek_request = -1.0
+parameters/yaw/seek_request = -1.0
+
+[node name="cctvSubview" type="SubViewport" parent="." index="3"]
+render_target_update_mode = 4
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="cctvSubview" index="0"]
+transform = Transform3D(3.57628e-07, 1, 4.4729e-08, -1, 3.57628e-07, -4.78775e-07, -4.78775e-07, -4.47288e-08, 1, -7.45057e-09, 0.213506, 0.590009)
+bone_name = "pitch"
+bone_idx = 2
+use_external_skeleton = true
+external_skeleton = NodePath("../../cctv rig/Skeleton3D")
+
+[node name="Camera3D" type="Camera3D" parent="cctvSubview/BoneAttachment3D" index="0"]
+transform = Transform3D(-7.58967e-07, -1, 4.34046e-07, -1, 7.58967e-07, -5.21469e-07, 5.21469e-07, -4.34046e-07, -1, -0.220093, 6.24975e-08, 0.362489)
+fov = 36.418

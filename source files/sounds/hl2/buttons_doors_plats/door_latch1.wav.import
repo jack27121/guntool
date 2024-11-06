@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1o1qtnweobf5"
+path="res://.godot/imported/door_latch1.wav-9ac0b2b207cd066a376d713c842a5e3f.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/door_latch1.wav"
+dest_files=["res://.godot/imported/door_latch1.wav-9ac0b2b207cd066a376d713c842a5e3f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

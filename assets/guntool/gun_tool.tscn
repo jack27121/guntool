@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cyyctvro6awi3" path="res://assets/guntool/gun tool gui/gun_tool_gui.tscn" id="4_0xqw5"]
 [ext_resource type="Shader" path="res://style/crt.gdshader" id="4_1lawm"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n3qvs"]
-viewport_path = NodePath("SubViewportContainer/ScreenViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_wsym2"]
+viewport_path = NodePath("ScreenViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l45l"]
 resource_local_to_scene = true
 shading_mode = 0
 specular_mode = 2
-albedo_texture = SubResource("ViewportTexture_n3qvs")
+albedo_texture = SubResource("ViewportTexture_wsym2")
 
 [sub_resource type="Animation" id="Animation_fxrrb"]
 resource_name = "bindpose"
@@ -306,23 +306,6 @@ _data = {
 "walking": SubResource("Animation_mnlv3")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6tro"]
-shader = ExtResource("4_1lawm")
-shader_parameter/resolution = Vector2(420, 300)
-shader_parameter/scan_line_amount = 0.12
-shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.144
-shader_parameter/interference_amount = 1.757
-shader_parameter/grille_amount = 0.042
-shader_parameter/grille_size = 1.0
-shader_parameter/vignette_amount = 0.027
-shader_parameter/vignette_intensity = 0.27
-shader_parameter/aberation_amount = 0.909
-shader_parameter/roll_line_amount = 0.097
-shader_parameter/roll_speed = 0.119
-shader_parameter/scan_line_strength = -1.0
-shader_parameter/pixel_strength = -4.0
-
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_3qpm7"]
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_aedwn"]
@@ -384,6 +367,7 @@ min_space = 0.0
 sync = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ln56n"]
+graph_offset = Vector2(-330.834, 247.618)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_aedwn")
 nodes/Add2/position = Vector2(620, 400)
 "nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_3qpm7")
@@ -407,13 +391,31 @@ nodes/Moving/position = Vector2(300, 320)
 nodes/output/position = Vector2(880, 420)
 node_connections = [&"Add2", 0, &"Moving", &"Add2", 1, &"Add2 2", &"Add2 2", 0, &"Folding", &"Add2 2", 1, &"Buttons", &"Buttons", 0, &"Animation 4", &"Buttons", 1, &"Animation 5", &"Buttons", 2, &"Animation 3", &"Folding", 0, &"Animation", &"Folding", 1, &"Animation 2", &"output", 0, &"Add2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6tro"]
+shader = ExtResource("4_1lawm")
+shader_parameter/resolution = Vector2(420, 300)
+shader_parameter/scan_line_amount = 0.12
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.144
+shader_parameter/interference_amount = 1.757
+shader_parameter/grille_amount = 0.042
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.027
+shader_parameter/vignette_intensity = 0.27
+shader_parameter/aberation_amount = 0.909
+shader_parameter/roll_line_amount = 0.097
+shader_parameter/roll_speed = 0.119
+shader_parameter/scan_line_strength = -1.0
+shader_parameter/pixel_strength = -4.0
+
 [node name="GunTool" instance=ExtResource("1_iilbq")]
 script = ExtResource("2_3ydrn")
+gui_colors = Array[Color]([Color(0.939465, 0.929644, 0.902974, 1), Color(0.882045, 0.621335, 0.350184, 1), Color(0.972549, 0.901961, 0.00784314, 1), Color(0.65965, 0.300602, 1, 1)])
 
 [node name="Skeleton3D" parent="gun_tool_skeleton" index="0"]
 unique_name_in_owner = true
-bones/0/position = Vector3(-5.96048e-09, -0.0920106, 0.023924)
-bones/0/rotation = Quaternion(-0.111951, -0.000123708, 0.000147906, 0.993714)
+bones/0/position = Vector3(-5.96048e-09, -0.0870368, 0.023095)
+bones/0/rotation = Quaternion(-0.113313, -9.64529e-05, 0.000114897, 0.993559)
 bones/0/scale = Vector3(1.00046, 1.00046, 1.00046)
 bones/1/rotation = Quaternion(0.086, 0.087, -0.702, 0.702)
 bones/1/scale = Vector3(1, 1, 1)
@@ -422,19 +424,7 @@ bones/2/rotation = Quaternion(0.124829, 1.18289e-07, 1.48611e-08, 0.992178)
 bones/2/scale = Vector3(0.967147, 0.967146, 0.967146)
 bones/3/scale = Vector3(1, 1, 1.00001)
 
-[node name="BoneAttachment3DBarrel" type="BoneAttachment3D" parent="gun_tool_skeleton/Skeleton3D" index="0"]
-transform = Transform3D(1.00046, -0.000266377, -0.000279105, 0.000321798, 0.975383, 0.222596, 0.000212842, -0.222596, 0.975383, -5.96048e-09, -0.0920106, 0.023924)
-bone_name = "handle"
-bone_idx = 0
-
-[node name="Node3D" type="Node3D" parent="gun_tool_skeleton/Skeleton3D/BoneAttachment3DBarrel" index="0"]
-transform = Transform3D(1, -0.000189441, -0.000591622, -0.000619229, -0.227934, -0.973676, 4.96036e-05, 0.973677, -0.227934, 2.60496e-05, 0.346655, -0.363326)
-
-[node name="GunToolRayCast" type="RayCast3D" parent="gun_tool_skeleton/Skeleton3D/BoneAttachment3DBarrel/Node3D" index="0"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
-target_position = Vector3(0, -10, 0)
-
-[node name="gun_tool" parent="gun_tool_skeleton/Skeleton3D" index="1"]
+[node name="gun_tool" parent="gun_tool_skeleton/Skeleton3D" index="0"]
 surface_material_override/1 = SubResource("StandardMaterial3D_3l45l")
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -443,94 +433,7 @@ libraries = {
 }
 autoplay = "sway"
 
-[node name="CameraViewport" type="SubViewport" parent="." index="2"]
-handle_input_locally = false
-size = Vector2i(420, 300)
-render_target_clear_mode = 2
-render_target_update_mode = 4
-
-[node name="BoneAttachment3DHandle" type="BoneAttachment3D" parent="CameraViewport" index="0"]
-transform = Transform3D(1.00046, -0.000266377, -0.000279105, 0.000321798, 0.975383, 0.222596, 0.000212842, -0.222596, 0.975383, -5.96048e-09, -0.0920106, 0.023924)
-bone_name = "handle"
-bone_idx = 0
-use_external_skeleton = true
-external_skeleton = NodePath("../../gun_tool_skeleton/Skeleton3D")
-
-[node name="GunToolCamera" type="Camera3D" parent="CameraViewport/BoneAttachment3DHandle" index="0"]
-unique_name_in_owner = true
-transform = Transform3D(0.999766, 0.000327186, 0.000216405, -0.000266039, 0.970839, -0.238756, -0.000288279, 0.238756, 0.970839, 1.54885e-05, 0.396806, -0.312498)
-current = true
-fov = 39.0
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="3"]
-anchors_preset = -1
-anchor_right = 0.583
-anchor_bottom = 0.625
-offset_top = -52.0
-offset_right = 0.23999
-offset_bottom = -52.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ScreenViewport" type="SubViewport" parent="SubViewportContainer" index="0"]
-unique_name_in_owner = true
-disable_3d = true
-handle_input_locally = false
-size = Vector2i(420, 300)
-render_target_update_mode = 4
-
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/ScreenViewport" index="0"]
-
-[node name="GunToolGui" parent="SubViewportContainer/ScreenViewport/CanvasLayer" index="0" node_paths=PackedStringArray("camera_viewport_main", "camera_main") instance=ExtResource("4_0xqw5")]
-unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-camera_viewport_main = NodePath("../../../../CameraViewport")
-camera_main = NodePath("../../../../CameraViewport/BoneAttachment3DHandle/GunToolCamera")
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="SubViewportContainer/ScreenViewport/CanvasLayer" index="1"]
-copy_mode = 2
-
-[node name="CRT" type="ColorRect" parent="SubViewportContainer/ScreenViewport/CanvasLayer" index="2"]
-material = SubResource("ShaderMaterial_f6tro")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT" index="0"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -40.0
-offset_right = 76.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="test label" type="Label" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT/HBoxContainer" index="0"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 8
-text = "dsadasda"
-
-[node name="test label2" type="Label" parent="SubViewportContainer/ScreenViewport/CanvasLayer/CRT/HBoxContainer" index="1"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 8
-text = "dsadasda"
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 unique_name_in_owner = true
 root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeBlendTree_ln56n")
@@ -546,4 +449,65 @@ parameters/Folding/transition_request = ""
 parameters/Folding/current_index = 1
 parameters/Moving/blend_position = -0.28013
 
-[connection signal="shoot" from="SubViewportContainer/ScreenViewport/CanvasLayer/GunToolGui" to="." method="_on_gun_tool_gui_shoot"]
+[node name="CameraViewport" type="SubViewport" parent="." index="3"]
+size = Vector2i(420, 300)
+render_target_update_mode = 4
+
+[node name="BoneAttachment3DHandle" type="BoneAttachment3D" parent="CameraViewport" index="0"]
+transform = Transform3D(1.00046, -0.00020655, -0.000217802, 0.000250288, 0.974769, 0.225271, 0.000165701, -0.225271, 0.974769, -5.96048e-09, -0.0870368, 0.023095)
+bone_name = "handle"
+bone_idx = 0
+use_external_skeleton = true
+external_skeleton = NodePath("../../gun_tool_skeleton/Skeleton3D")
+
+[node name="GunToolCamera" type="Camera3D" parent="CameraViewport/BoneAttachment3DHandle" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(0.999766, 0.000327186, 0.000216405, -0.000266039, 0.970839, -0.238756, -0.000288279, 0.238756, 0.970839, 1.54885e-05, 0.396806, -0.312498)
+current = true
+fov = 39.0
+
+[node name="GunToolRayCast" type="RayCast3D" parent="CameraViewport/BoneAttachment3DHandle" index="1"]
+transform = Transform3D(0.999999, 0, 0, 0, -0.238533, -0.971134, 0, 0.971134, -0.238533, 2.56986e-05, 0.346142, -0.363532)
+target_position = Vector3(0, -2000, 0)
+debug_shape_thickness = 1
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="CameraViewport/BoneAttachment3DHandle" index="2"]
+unique_name_in_owner = true
+transform = Transform3D(0.99954, 0.000221257, -0.000189354, -0.000258593, 0.973229, -0.227829, 0.000133938, 0.227829, 0.973229, 3.83044e-05, 0.188486, 0.0202513)
+volume_db = -37.559
+unit_size = 50.0
+max_polyphony = 4
+panning_strength = 0.1
+
+[node name="ScreenViewport" type="SubViewport" parent="." index="4"]
+unique_name_in_owner = true
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(420, 300)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ScreenViewport" index="0"]
+
+[node name="GunToolGui" parent="ScreenViewport/CanvasLayer" index="0" node_paths=PackedStringArray("camera_viewport_main", "camera_main") instance=ExtResource("4_0xqw5")]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+camera_viewport_main = NodePath("../../../CameraViewport")
+camera_main = NodePath("../../../CameraViewport/BoneAttachment3DHandle/GunToolCamera")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="ScreenViewport/CanvasLayer" index="1"]
+copy_mode = 2
+
+[node name="CRT" type="ColorRect" parent="ScreenViewport/CanvasLayer" index="2"]
+material = SubResource("ShaderMaterial_f6tro")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cq5ot5y1vqsj8"
+path="res://.godot/imported/lever4.wav-ab19531a4c5fca97a6fe1b5be1dd0fcd.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/lever4.wav"
+dest_files=["res://.godot/imported/lever4.wav-ab19531a4c5fca97a6fe1b5be1dd0fcd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

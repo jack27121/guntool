@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pg8ammoqunak"
+path="res://.godot/imported/heavy_metal_stop1.wav-0501c9f9bd25dc5f14794a59af165bdb.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/heavy_metal_stop1.wav"
+dest_files=["res://.godot/imported/heavy_metal_stop1.wav-0501c9f9bd25dc5f14794a59af165bdb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

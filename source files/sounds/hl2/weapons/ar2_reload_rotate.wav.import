@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rfkmk854rc1b"
+path="res://.godot/imported/ar2_reload_rotate.wav-0f65d9b96b4963291b28acad2b3a395d.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/ar2_reload_rotate.wav"
+dest_files=["res://.godot/imported/ar2_reload_rotate.wav-0f65d9b96b4963291b28acad2b3a395d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

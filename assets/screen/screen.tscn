@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bel1l220gcq57"]
+
+[ext_resource type="Script" path="res://assets/screen/screen.gd" id="1_0idfy"]
+[ext_resource type="PackedScene" uid="uid://dle5mttdmyvfy" path="res://assets/camera_feed/camera_feed.tscn" id="1_25wf0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t35to"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qyjba"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sydg"]
+resource_local_to_scene = true
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_qyjba")
+
+[sub_resource type="ImageTexture" id="ImageTexture_g0tus"]
+resource_local_to_scene = true
+
+[node name="Screen" type="Node3D"]
+script = ExtResource("1_0idfy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_t35to")
+surface_material_override/0 = SubResource("StandardMaterial3D_5sydg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="CameraFeed" parent="SubViewport" instance=ExtResource("1_25wf0")]
+unique_name_in_owner = true
+texture = SubResource("ImageTexture_g0tus")

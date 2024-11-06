@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3bsv70prjlrj"
+path="res://.godot/imported/drawbridge_move1.wav-2b6061b67d656f9be8d696f55a5aa722.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/drawbridge_move1.wav"
+dest_files=["res://.godot/imported/drawbridge_move1.wav-2b6061b67d656f9be8d696f55a5aa722.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

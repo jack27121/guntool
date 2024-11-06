@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck4rwpweapscf"
+path="res://.godot/imported/hard_boot5.wav-ebe01fa7b39a6b499e36454f08feb3ff.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/footsteps/hard_boot5.wav"
+dest_files=["res://.godot/imported/hard_boot5.wav-ebe01fa7b39a6b499e36454f08feb3ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

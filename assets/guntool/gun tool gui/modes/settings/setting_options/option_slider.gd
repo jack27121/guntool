@@ -1,40 +1,36 @@
 @tool
-extends GunToolGui
+extends GunToolGuiOption
 
-signal setting_changed(val : int)
+@onready var slider := %Slider
 
-@export var active : bool = false :
-	set (_active):
-		active = _active
-		if not is_node_ready():	await ready
-		if(active): %Invert.visible = true
-		else: %Invert.visible = false
+func _trigger() -> void:
+	if(gui.gui_stack.back() != owner):
+		sound_play(snd_cancel)
+		exit()
+	else:
+		sound_play(snd_ok)
+		enter(self)
+	
+func _button() -> void:
+	sound_play(snd_cancel)
+	exit()
 
-func _ready() -> void:
-	super._ready()
+func _scroll(val : int) -> void:
+	sound_play(snd_option)
+	var new_selected = selected - val
+	selected = clamp(new_selected,0,selected_max)
+	
+func _on_entered() -> void:
+	%Invert.visible = true
+
+func _on_exited() -> void:
+	%Invert.visible = false
 
 func _on_selected() -> void:
-	if not is_node_ready():	await ready
-	%Slider.value = selected
-	
-func _on_selected_max() -> void:
-	if not is_node_ready():	await ready
-	%Slider.max_value = selected_max
-	
-func on_entered():
-	super.on_entered()
-	active = true
-	
-func on_exited():
-	super.on_exited()
-	active = false
+	if not slider: await ready
+	slider.value = selected
+	option_changed()
 
-func scroll(val) -> void:
-	selected = clamp(selected-val ,0,selected_max)
-	setting_changed.emit(selected)
-	
-func trigger() -> void:
-	exit()
-	
-func button() -> void:
-	exit()
+func _on_selected_max() -> void:
+	if not slider: await ready
+	slider.max_value = selected_max
