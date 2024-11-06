@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbt846eja7p3c"]
+
+[ext_resource type="PackedScene" uid="uid://cpwyu7532ts3l" path="res://assets/test/test_1.tscn" id="1_4yjf3"]
+
+[node name="TestBase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Test1" parent="." instance=ExtResource("1_4yjf3")]
+layout_mode = 1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dk5khq0u5l3n7"
+path="res://.godot/imported/357_fire2.wav-351e62e36ccce590f1474de8acf2abbd.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/357_fire2.wav"
+dest_files=["res://.godot/imported/357_fire2.wav-351e62e36ccce590f1474de8acf2abbd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

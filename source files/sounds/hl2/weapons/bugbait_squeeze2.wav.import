@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhas1517rq7ax"
+path="res://.godot/imported/bugbait_squeeze2.wav-036c33564cc8c49a786d0355c92d0282.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/bugbait_squeeze2.wav"
+dest_files=["res://.godot/imported/bugbait_squeeze2.wav-036c33564cc8c49a786d0355c92d0282.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

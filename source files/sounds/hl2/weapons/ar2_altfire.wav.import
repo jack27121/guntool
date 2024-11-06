@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf16ksqxxx3a"
+path="res://.godot/imported/ar2_altfire.wav-e4a1a2cdb9e00754f33b1e85038b4a80.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/ar2_altfire.wav"
+dest_files=["res://.godot/imported/ar2_altfire.wav-e4a1a2cdb9e00754f33b1e85038b4a80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

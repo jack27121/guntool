@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfi0fdmahe2gt"
+path="res://.godot/imported/gauss_chargeloop.wav-a988a877157808b8e1bd42ca89a3d1f3.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/gauss_chargeloop.wav"
+dest_files=["res://.godot/imported/gauss_chargeloop.wav-a988a877157808b8e1bd42ca89a3d1f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

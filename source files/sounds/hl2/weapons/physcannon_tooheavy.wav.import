@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ed6s1cdx3nyy"
+path="res://.godot/imported/physcannon_tooheavy.wav-ac1ab152785e63b12f09784a7ee417ee.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/physcannon_tooheavy.wav"
+dest_files=["res://.godot/imported/physcannon_tooheavy.wav-ac1ab152785e63b12f09784a7ee417ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

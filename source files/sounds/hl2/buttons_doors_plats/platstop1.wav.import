@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://t0gegyi8tosd"
+path="res://.godot/imported/platstop1.wav-a9917c87c630e9ff7a0e845210d69ec9.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/buttons_doors_plats/platstop1.wav"
+dest_files=["res://.godot/imported/platstop1.wav-a9917c87c630e9ff7a0e845210d69ec9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

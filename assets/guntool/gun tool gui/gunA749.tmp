@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://cyyctvro6awi3"]
+
+[ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_6jsrl"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/gun_tool_gui.gd" id="2_pkwkq"]
+[ext_resource type="PackedScene" uid="uid://dle5mttdmyvfy" path="res://assets/guntool/gun tool gui/camera_feed/camera_feed.tscn" id="3_06vh7"]
+[ext_resource type="Script" path="res://assets/guntool/highlighting.gd" id="3_t7xj0"]
+[ext_resource type="PackedScene" uid="uid://c4nvcycvjfcje" path="res://assets/guntool/gun tool gui/side menu/gun_tool_gui_sidemenu.tscn" id="3_w7amv"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/camera_feed/camera_feed.gd" id="4_h61ra"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/modes/shooting_mode.gd" id="5_k8ald"]
+[ext_resource type="Shader" path="res://style/signal_noise.gdshader" id="5_t36xo"]
+[ext_resource type="PackedScene" uid="uid://x5glhxy3lej3" path="res://assets/guntool/gun tool gui/modes/settings/settings_mode.tscn" id="7_hfk6y"]
+[ext_resource type="Shader" path="res://assets/guntool/gun tool gui/gun_tool_gui.gdshader" id="15_1q7o4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdi3"]
+shader = ExtResource("5_t36xo")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/noise_amount = 1.03
+shader_parameter/interference_amount = 39.903
+shader_parameter/signal_loss = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3d4v4"]
+shader = ExtResource("15_1q7o4")
+shader_parameter/color_uniform = Vector3(1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc14o"]
+shader = ExtResource("15_1q7o4")
+shader_parameter/color_uniform = Vector3(1, 0.7, 0.4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3uwtk"]
+viewport_path = NodePath("GuiSubViewport")
+
+[node name="GunToolGui" type="Control"]
+custom_minimum_size = Vector2(420, 300)
+layout_mode = 3
+anchor_right = 0.583
+anchor_bottom = 0.625
+offset_right = 0.23999
+theme = ExtResource("1_6jsrl")
+script = ExtResource("2_pkwkq")
+
+[node name="CameraFeed" parent="." instance=ExtResource("3_06vh7")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+script = ExtResource("4_h61ra")
+
+[node name="SignalNoise" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6pdi3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GuiSubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(420, 300)
+
+[node name="Modes" type="Control" parent="GuiSubViewport"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6jsrl")
+
+[node name="ShootingMode" type="Control" parent="GuiSubViewport/Modes"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_k8ald")
+
+[node name="SettingsMode" parent="GuiSubViewport/Modes" instance=ExtResource("7_hfk6y")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Backdrop" type="ColorRect" parent="GuiSubViewport"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="SideMenu" parent="GuiSubViewport" instance=ExtResource("3_w7amv")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3d4v4")
+anchors_preset = 9
+anchor_right = 0.0
+offset_right = 59.0
+grow_horizontal = 1
+size_flags_horizontal = 0
+
+[node name="Gui" type="TextureRect" parent="."]
+texture_filter = 2
+material = SubResource("ShaderMaterial_kc14o")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_3uwtk")
+
+[node name="Highlighting" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("3_t7xj0")
+max_dist = 1000.0

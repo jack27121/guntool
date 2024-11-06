@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyaxvxg74ddxd"
+path="res://.godot/imported/explode5.wav-08bdf37b3f0d9bfd2cfb1287f31e1c9f.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/explode5.wav"
+dest_files=["res://.godot/imported/explode5.wav-08bdf37b3f0d9bfd2cfb1287f31e1c9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

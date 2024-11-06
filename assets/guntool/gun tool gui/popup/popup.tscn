@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqnaa560jwipk"]
+
+[ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_wq2h4"]
+[ext_resource type="Script" path="res://assets/guntool/gun tool gui/popup/popup.gd" id="1_y1xx5"]
+[ext_resource type="PackedScene" uid="uid://dyq3bxk434mys" path="res://assets/guntool/gun tool gui/modes/settings/setting_options/parts/option_box.tscn" id="3_wmuix"]
+
+[node name="Popup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wq2h4")
+script = ExtResource("1_y1xx5")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "dasdasda"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "dasdasda"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_wmuix")]
+layout_mode = 2
+
+[node name="ColorRect2" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_wmuix")]
+layout_mode = 2

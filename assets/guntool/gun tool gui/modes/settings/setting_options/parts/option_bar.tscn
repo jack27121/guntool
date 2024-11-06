@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://djvn2akm30852"]
+
+[ext_resource type="Theme" uid="uid://bmtyrqnum5klj" path="res://style/guntool_theme.tres" id="1_qtcrj"]
+[ext_resource type="Shader" path="res://style/invert.gdshader" id="2_ab2qb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rh1pp"]
+shader = ExtResource("2_ab2qb")
+
+[node name="OptionBar" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchor_right = 0.3875
+anchor_bottom = 0.104167
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_qtcrj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+
+[node name="Text" type="Label" parent="ColorRect/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Text"
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Options" type="HBoxContainer" parent="ColorRect/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+position = Vector2(-372, -22)
+copy_mode = 2
+
+[node name="Active" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_rh1pp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

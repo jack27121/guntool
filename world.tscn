@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://w4r0bhoxcg2a"]
+[gd_scene load_steps=5 format=3 uid="uid://w4r0bhoxcg2a"]
 
 [ext_resource type="PackedScene" uid="uid://be3kwdtbjww4y" path="res://assets/highlight_component.tscn" id="2_aanpl"]
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="2_ithp6"]
+[ext_resource type="PackedScene" uid="uid://ch68uc30jmnk3" path="res://assets/cctv camera/cctv_camera.tscn" id="3_lx5ox"]
+[ext_resource type="PackedScene" uid="uid://bel1l220gcq57" path="res://assets/screen/screen.tscn" id="4_4sxg3"]
 
 [node name="World" type="Node3D"]
 
@@ -21,17 +23,38 @@ transform = Transform3D(0.149646, 0, 0, 0, 0.151499, 0, 0, 0, 0.114467, -2.0238,
 transform = Transform3D(0.149646, 0, 0, 0, 0.151499, 0, 0, 0, 0.114467, 2.72081, 1.14081, -2.17082)
 
 [node name="BasicBlock" parent="." instance=ExtResource("2_ithp6")]
-transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -0.5, 0)
+transform = Transform3D(16.2511, 0, 0, 0, 1.01569, 0, 0, 0, 16.2511, 0, -0.5, 0)
 block_style = 1
 
 [node name="BasicBlock2" parent="." instance=ExtResource("2_ithp6")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 16, -7.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 16, -7.5, 2.5, 0)
 
 [node name="BasicBlock3" parent="." instance=ExtResource("2_ithp6")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 16, 7.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 16, 7.5, 2.5, 0)
 
 [node name="BasicBlock4" parent="." instance=ExtResource("2_ithp6")]
-transform = Transform3D(-4.37114e-08, 0, -16, 0, 2, 0, 1, 0, -6.99382e-07, 3.27835e-07, 1, -7.5)
+transform = Transform3D(-4.37114e-08, 0, -16, 0, 5, 0, 1, 0, -6.99382e-07, 3.27835e-07, 2.5, -7.5)
 
 [node name="BasicBlock5" parent="." instance=ExtResource("2_ithp6")]
-transform = Transform3D(-4.37114e-08, 0, -16, 0, 2, 0, 1, 0, -6.99382e-07, -3.27835e-07, 1, 7.5)
+transform = Transform3D(-4.37114e-08, 0, -16, 0, 5, 0, 1, 0, -6.99382e-07, -3.27835e-07, 2.5, 7.5)
+
+[node name="cctv_camera" parent="." instance=ExtResource("3_lx5ox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.5, -7)
+pitch = 8.858
+yaw = 33.795
+
+[node name="Skeleton3D" parent="cctv_camera/cctv rig" index="0"]
+bones/1/rotation = Quaternion(5.70313e-08, 0.29066, -1.73247e-08, 0.956826)
+bones/2/rotation = Quaternion(0.0546056, 0.0546054, -0.704995, 0.704995)
+bones/5/position = Vector3(-0.0622168, 0.195227, 0.296609)
+bones/6/position = Vector3(-0.01039, 0.0700974, 0.154508)
+bones/6/scale = Vector3(1, 1, 1)
+
+[node name="BoneAttachment3D" parent="cctv_camera/cctvSubview" index="0"]
+transform = Transform3D(-0.0856507, 0.831033, 0.549589, -0.988073, 2.38419e-07, -0.153987, -0.127968, -0.556223, 0.821121, -3, 3.71351, -6.40999)
+
+[node name="Screen" parent="." node_paths=PackedStringArray("camera_viewport") instance=ExtResource("4_4sxg3")]
+transform = Transform3D(1.32776, 0, 0, 0, 1.34652, 0, 0, 0, 1, -0.180933, 2.55356, -6.73556)
+camera_viewport = NodePath("../cctv_camera/cctvSubview")
+
+[editable path="cctv_camera"]

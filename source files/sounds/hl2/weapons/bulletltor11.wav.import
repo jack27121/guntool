@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3huc5qlrlvjb"
+path="res://.godot/imported/bulletltor11.wav-e3bf150c6161f9b4faeb367afa87369b.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/bulletltor11.wav"
+dest_files=["res://.godot/imported/bulletltor11.wav-e3bf150c6161f9b4faeb367afa87369b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

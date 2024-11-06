@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxtqmmvi4mc4b"
+path="res://.godot/imported/tripmine_ropeshoot.wav-8d34b178c7e6a6c6aa0da525d547c7da.sample"
+
+[deps]
+
+source_file="res://source files/sounds/hl2/weapons/tripmine_ropeshoot.wav"
+dest_files=["res://.godot/imported/tripmine_ropeshoot.wav-8d34b178c7e6a6c6aa0da525d547c7da.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
